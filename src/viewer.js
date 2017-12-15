@@ -201,6 +201,7 @@ export default class ReactSVGPanZoom extends React.Component {
   }
 
   render() {
+    console.log("rendering the pan-zoom")
     let {props, state: {viewerX, viewerY}} = this;
     let tool = this.getTool();
     let value = this.getValue();
