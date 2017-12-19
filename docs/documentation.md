@@ -31,6 +31,7 @@
 | customMiniature   | -            | Component |  Override miniature component | 
 | disableDoubleClickZoomWithToolAuto | `false` | Boolean | Turn off zoom on double click |
 | onClick         | - | `fn(viewerEvent: ViewerMouseEvent)` | Handler* for click | 
+| onZoom         | - | `fn(viewerEvent: ViewerMouseEvent)` | Handler* for wheel | 
 | onDoubleClick     | - | `fn(viewerEvent: ViewerMouseEvent)` | Handler* for dblclick | 
 | onMouseUp         | - | `fn(viewerEvent: ViewerMouseEvent)` | Handler* for mouseup |
 | onMouseMove        | - | `fn(viewerEvent: ViewerMouseEvent)` | Handler* for mousemove |
