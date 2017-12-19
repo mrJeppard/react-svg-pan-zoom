@@ -1,6 +1,8 @@
 # react-svg-pan-zoom
 **react-svg-pan-zoom** is a React component that adds **pan** and **zoom** features to the **SVG images**. It helps to display big SVG images in a small space.
 
+The differences in this fork are events still propagate when using Pan tool and an onZoom prop for passing function to wheel event.
+
 [![npm](https://img.shields.io/npm/v/react-svg-pan-zoom.svg?maxAge=2592000?style=plastic)](https://www.npmjs.com/package/react-svg-pan-zoom)
 [![Downloads](https://img.shields.io/npm/dm/react-svg-pan-zoom.svg)](https://www.npmjs.com/package/react-svg-pan-zoom)
 [![Beerpay](https://beerpay.io/chrvadala/react-svg-pan-zoom/badge.svg?style=beer)](https://beerpay.io/chrvadala/react-svg-pan-zoom)
