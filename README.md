@@ -14,7 +14,7 @@ available at [http://chrvadala.github.io/react-svg-pan-zoom/](http://chrvadala.g
 
 ## Features
 This component can work in four different modes depending on the selected tool:
-- With the tool **pan** the user can move the image and drag it around within the viewer, but can't interact with SVG child elements.
+- With the tool **pan** the user can move the image and drag it around within the viewer, AND interact with SVG child elements and trigger events (this is the main difference in the fork).
 - With the tool **zoom** the user can scale the image either with a point click or selecting a region to zoom the specified area, but can't interact with SVG child elements.
 - With the tool **none** the user can interact with SVG child elements and trigger events.
 - With the tool **auto** the user can interact with SVG child elements, perform *pan* (dragging the image), *zoom in* (double click), *zoom out* (double click + shift).
