@@ -158,7 +158,7 @@ export default class ReactSVGPanZoom extends React.Component {
   handleViewerEvent(event) {
     let {props, state: {value}, ViewerDOM} = this;
 
-    if (!([TOOL_NONE, TOOL_AUTO].indexOf(this.getTool()) >= 0)) return;
+    if (!([TOOL_PAN, TOOL_NONE, TOOL_AUTO].indexOf(this.getTool()) >= 0)) return;
     if (event.target === ViewerDOM) return;
 
     let eventsHandler = {
@@ -173,6 +173,7 @@ export default class ReactSVGPanZoom extends React.Component {
       touchmove: props.onTouchMove,
       touchend: props.onTouchEnd,
       touchcancel: props.onTouchCancel,
+      wheel : props.onZoom,
     };
 
     let onEventHandler = eventsHandler[event.type];
@@ -201,7 +202,6 @@ export default class ReactSVGPanZoom extends React.Component {
   }
 
   render() {
-    console.log("rendering the pan-zoom")
     let {props, state: {viewerX, viewerY}} = this;
     let tool = this.getTool();
     let value = this.getValue();
@@ -272,6 +272,7 @@ export default class ReactSVGPanZoom extends React.Component {
           onWheel={ event => {
             let nextValue = onWheel(event, this.ViewerDOM, this.getTool(), this.getValue(), this.props);
             if (this.getValue() !== nextValue) this.setValue(nextValue);
+            this.handleViewerEvent(event);
           }}
 
           onMouseEnter={ event => {
@@ -444,6 +445,9 @@ ReactSVGPanZoom.propTypes = {
 
   //handler click
   onClick: PropTypes.func,
+
+  //handler zoom
+  onZoom: PropTypes.func,
 
   //handler double click
   onDoubleClick: PropTypes.func,
