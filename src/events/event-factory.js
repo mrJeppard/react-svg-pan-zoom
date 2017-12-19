@@ -11,6 +11,7 @@ export default function (originalEvent, value, SVGViewer) {
     case "mousedown":
     case "click":
     case "dblclick":
+    case "wheel":
       return new ViewerMouseEvent(originalEvent, value, SVGViewer);
 
     case "touchstart":
