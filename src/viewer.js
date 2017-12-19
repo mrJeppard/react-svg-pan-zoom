@@ -157,9 +157,10 @@ export default class ReactSVGPanZoom extends React.Component {
 
   handleViewerEvent(event) {
     let {props, state: {value}, ViewerDOM} = this;
-
     if (!([TOOL_PAN, TOOL_NONE, TOOL_AUTO].indexOf(this.getTool()) >= 0)) return;
-    if (event.target === ViewerDOM) return;
+
+    const isNotPan = () => {return this.getTool() !== TOOL_PAN};
+    if (event.target === ViewerDOM && isNotPan()) return;
 
     let eventsHandler = {
       click: props.onClick,
